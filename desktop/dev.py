@@ -50,7 +50,8 @@ def wait_for_port(port):
 # print('Please wait to close')
 # vite.terminate()
 # print('Closed')
-
+from app import start_media_server
+start_media_server(port=8000)   # <-- add this before run()
 
 try:
     # Optional: Uncomment the line below to wait for Vite to be fully ready 

@@ -2,10 +2,10 @@
 
 
 a = Analysis(
-    ['E:\\MyProjects\\AllinOne\\desktop-apps\\test\\desktop/build.py'],
+    ['E:\\MyProjects\\AllinOne\\boiler-plate-for-desktop-app\\desktop/build.py'],
     pathex=[],
     binaries=[],
-    datas=[('E:\\MyProjects\\AllinOne\\desktop-apps\\test\\frontend/dist', 'frontend/dist')],
+    datas=[('E:\\MyProjects\\AllinOne\\boiler-plate-for-desktop-app\\frontend/dist', 'frontend/dist')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

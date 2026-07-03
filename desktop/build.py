@@ -15,10 +15,9 @@ def resource_path(relative_path):
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PARENT_DIR = os.path.dirname(BASE_DIR)
-print(PARENT_DIR)
-dist = os.path.join(PARENT_DIR, "frontend/dist")
+print(PARENT_DIR) 
+dist = os.path.join(PARENT_DIR, "frontend/dist") # use this if u are running python .\desktop\build.py 
 dist = resource_path("frontend/dist") # use this if u are running python .\desktop\package.py 
-# dist = os.path.abspath("../frontend/dist")  # use this if u are running python .\desktop\build.py 
 print(dist)
 start_static_server(dist)
 
