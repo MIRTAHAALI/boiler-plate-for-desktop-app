@@ -6,6 +6,19 @@ import shutil
 from app import run
 
 
+import platform
+npm_cmd = 'npm.cmd'
+os_name = platform.system()
+
+if os_name == 'Windows':
+    npm_cmd = 'npm.cmd'
+    print("You are using Windows.")
+elif os_name == 'Darwin':
+    npm_cmd = 'npm'
+    print("You are using macOS.")
+else:
+    print(f"You are using another operating system: {os_name}")
+
 # frontend = os.path.abspath("../frontend")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 print(BASE_DIR)
@@ -24,7 +37,7 @@ print("npm.cmd:", shutil.which("npm.cmd"))
 vite = None
 try:
     vite = subprocess.Popen(
-    ["npm.cmd", "run", "dev"],
+    [npm_cmd, "run", "dev"],
     cwd=frontend,
     stdout=subprocess.PIPE,
     stderr=subprocess.STDOUT,
@@ -54,9 +67,6 @@ from app import start_media_server
 start_media_server(port=8000)   # <-- add this before run()
 
 try:
-    # Optional: Uncomment the line below to wait for Vite to be fully ready 
-    # before starting your backend app. This prevents race conditions.
-    # wait_for_port(5173)
     
     run("http://localhost:5173", debug=True)
 except KeyboardInterrupt:

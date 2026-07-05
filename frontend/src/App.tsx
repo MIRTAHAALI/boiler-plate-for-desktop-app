@@ -15,9 +15,9 @@ export default function App() {
 
     return () => clearInterval(timer);
   }, []);
-  const path =
+  let path =
     "E:/YTDown_YouTube_Learn-OWASP-ZAP-In-8-Minutes-Automated-H_Media_WGSGGgMd9Fo_002_720p.mp4";
-
+  // path = "/Users/mirtahaali/Downloads/Unhandled Exception PlatformException,  Unable to establish connection on channel, null, null.mp4" // for mac
   const videoSrc = `http://127.0.0.1:8000/media?path=${encodeURIComponent(path)}`;
 
   return (
